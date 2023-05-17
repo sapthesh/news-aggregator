@@ -8,22 +8,19 @@ A News Aggregator Website that fetches news articles from various sources about 
 - Stores news articles in a database for quicker access and reduced API calls.
 - Provides a user-friendly and responsive design with Material Design and Bootstrap.
 - Implements smooth loading and AJAX functionality for seamless user experience.
-- Includes an admin dashboard to control the articles displayed and manage ad space.
 
 ## Installation
 
 1. Clone the repository:
 - `git clone https://github.com/sapthesh/news-aggregator.git`
 
-
 2. Set up the database:
 
 - Create a new database on your MySQL server.
-- Import the `database.sql` file included in the repository to create the required tables.
 
 3. Update configuration:
 
-- Open the `config.php` file.
+- Open the `fetch_news.php` file.
 - Set your database credentials in the `$servername`, `$username`, `$password`, and `$dbname` variables.
 
 4. Obtain a News API key:
@@ -43,7 +40,7 @@ A News Aggregator Website that fetches news articles from various sources about 
 
 ## Usage
 
-- Upon accessing the website, it will fetch news articles about Narendra Modi from various sources and display them on the homepage.
+- Upon accessing the website, it will fetch news articles about any keyword from various sources and display them on the homepage.
 - The articles are initially loaded from the database, and if an article's content is missing, it will be fetched from the source website and stored in the database for future access.
 - The website provides a "Read More" button for each article, allowing users to view the full article content on a separate page within the website.
 
