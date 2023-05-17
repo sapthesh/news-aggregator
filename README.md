@@ -20,7 +20,7 @@ A News Aggregator Website that fetches news articles from various sources about 
 
 3. Update configuration:
 
-- Open the `fetch_news.php` file.
+- Open the `fetch_news.php` & `article.php` file.
 - Set your database credentials in the `$servername`, `$username`, `$password`, and `$dbname` variables.
 
 4. Obtain a News API key:
