@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="author" content="Sapthesh V">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+  <title>Narendra Modi News</title>
+</head>
+<body>
+  <nav>
+    <div class="nav-wrapper blue">
+      <a href="/news/v2/" class="brand-logo center">Any News</a>
+    </div>
+  </nav>
+
+  <div class="container">
+    <div id="newsList"></div>
+    <div id="loading" class="progress">
+      <div class="indeterminate"></div>
+    </div>
+  </div>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+  <script>
+  $(document).ready(function() {
+    loadNews();
+
+    function loadNews() {
+      $("#loading").show();
+      $.ajax({
+        url: "fetch_news.php",
+        type: "GET",
+        success: function(response) {
+          $("#newsList").empty();
+          if (response.length > 0) {
+            $.each(response, function(index, article) {
+              var newsItem = `
+                <div class="card">
+                  <div class="card-content">
+                    <span class="card-title">${article.title}</span>
+                    <p>${article.description}</p>
+                  </div>
+                  <div class="card-action">
+                    <a href="article.php?id=${article.id}">Read More</a>
+                  </div>
+                </div>
+              `;
+              $("#newsList").append(newsItem);
+            });
+          } else {
+            $("#newsList").html("<p>No news articles found.</p>");
+          }
+        },
+        error: function() {
+          $("#newsList").html("<p>Error occurred while fetching news.</p>");
+        },
+        complete: function() {
+          $("#loading").hide();
+        }
+      });
+    }
+  });
+</script>
+
+</body>
+</html>
