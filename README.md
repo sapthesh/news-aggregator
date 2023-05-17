@@ -46,7 +46,6 @@ A News Aggregator Website that fetches news articles from various sources about 
 - Upon accessing the website, it will fetch news articles about Narendra Modi from various sources and display them on the homepage.
 - The articles are initially loaded from the database, and if an article's content is missing, it will be fetched from the source website and stored in the database for future access.
 - The website provides a "Read More" button for each article, allowing users to view the full article content on a separate page within the website.
-- The admin dashboard can be accessed by navigating to `/admin` and provides controls to manage the articles displayed and ad space.
 
 ## Contributing
 
