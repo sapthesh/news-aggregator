@@ -13,7 +13,7 @@ A News Aggregator Website that fetches news articles from various sources about 
 ## Installation
 
 1. Clone the repository:
-- git clone https://github.com/sapthesh/news-aggregator.git
+- `git clone https://github.com/sapthesh/news-aggregator.git`
 
 
 2. Set up the database:
